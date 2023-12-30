@@ -7,8 +7,17 @@
     "build": "remix build",
     "dev": "remix dev --manual",
     "start": "remix-serve ./build/index.js",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint .",
+    "format": "prettier --write .",
+    "format:repo": "npm run format && npm run lint -- --fix"
   },
+  "prettier": {},
+  "eslintIgnore": [
+    "/node_modules",
+    "/server/index.js",
+    "/public/build"
+  ],
   "dependencies": {
     "@remix-run/css-bundle": "^2.3.1",
     "@remix-run/node": "^2.3.1",
