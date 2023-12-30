@@ -20,9 +20,9 @@ interface INavbarLogoProps {
     logoPath: string;
 }
 function NavbarLogo(props: INavbarLogoProps) {
-    return <div className="navbar-logo">
-        <img src={props.logoPath} rel="Logo" />
-    </div>
+    return <a href="/" className="navbar-logo">
+        <img src={props.logoPath} alt="Logo" />
+    </a>
 }
 
 interface INavbarDownloadButtonProps {
