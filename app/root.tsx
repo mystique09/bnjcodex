@@ -9,6 +9,14 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 import stylesheet from "~/tailwind.css";
+import { Header } from "./components/layout/header";
+
+import '@fontsource-variable/space-grotesk/wght.css';
+import '@fontsource/poppins/100.css';
+import '@fontsource/poppins/200.css';
+import '@fontsource/poppins/300.css';
+import '@fontsource/poppins/500.css';
+import '@fontsource/poppins/700.css';
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
@@ -24,7 +32,8 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="bg-secondary">
+        <Header />
         <Outlet />
         <ScrollRestoration />
         <Scripts />
