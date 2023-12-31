@@ -9,7 +9,7 @@ interface INavbarProps {
     children: React.ReactNode;
 }
 export function NavbarContainer(props: INavbarProps) {
-    return <header className="header sticky top-0 left-0 w-full pt-5 z-20">
+    return <header className="header sticky top-0 left-0 w-full py-5 z-20">
         <nav className="navbar max-w-6xl bg-white mx-auto shadow-lg py-5 px-10 rounded-[100px] flex items-center justify-between">
             {props.children}
         </nav>
