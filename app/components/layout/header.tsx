@@ -1,15 +1,28 @@
+import { MaterialSymbolsCloudDownloadOutline } from "../shared/icons";
+
 export function Header() {
     return <NavbarContainer>
         <NavbarLogo logoPath="/bnj-logo-light.svg" />
-        <NavbarDownloadButton resourcePath="/Garcia, Benjie Ben.pdf" />
+        <div className="nav-links flex items-center gap-6">
+            <ul className="font-light">
+                <li>
+                    <a href="/projects">
+                        Projects
+                    </a>
+                </li>
+            </ul>
+            <div className="divider w-px h-4 bg-text-content hidden sm:block"></div>
+            <NavbarDownloadButton resourcePath="/Garcia, Benjie Ben.pdf" />
+        </div>
     </NavbarContainer>
 }
 
 interface INavbarProps {
     children: React.ReactNode;
+
 }
 export function NavbarContainer(props: INavbarProps) {
-    return <header className="header sticky top-0 left-0 w-full py-5 z-20">
+    return <header className="header sticky top-0 left-0 w-full py-2 sm:py-5 z-20 px-4">
         <nav className="navbar max-w-6xl bg-white mx-auto shadow-lg py-5 px-10 rounded-[100px] flex items-center justify-between">
             {props.children}
         </nav>
@@ -20,14 +33,17 @@ interface INavbarLogoProps {
     logoPath: string;
 }
 function NavbarLogo(props: INavbarLogoProps) {
-    return <a href="/" className="navbar-logo">
-        <img src={props.logoPath} alt="Logo" />
+    return <a href="/" className="relative h-8 w-8 sm:h-10 sm:w-10 navbar-logo">
+        <img className="absolute inset-0 w-full h-full" src={props.logoPath} alt="Logo" />
     </a>
 }
 
-interface INavbarDownloadButtonProps {
+export interface INavbarDownloadButtonProps {
     resourcePath: string;
 }
-function NavbarDownloadButton(props: INavbarDownloadButtonProps) {
-    return <a download href={props.resourcePath} className="navbar-download-btn pr-8 pl-6 py-6 bg-primary rounded-[100px] text-white font-light">Download resume</a>
+export function NavbarDownloadButton(props: INavbarDownloadButtonProps) {
+    return <a download href={props.resourcePath} className="navbar-download-btn hidden group py-3 px-4 sm:pr-10 sm:pl-8 sm:py-6 bg-primary rounded-[100px] text-white font-light sm:flex items-center gap-4 lg:hover:bg-transparent lg:hover:ring-2 lg:hover:ring-primary lg:hover:ease-in-out lg:hover:duration-300 hover:transition-all"><span className="lg:group-hover:text-primary text-sm sm:text-base">
+        Download resume</span>
+        <MaterialSymbolsCloudDownloadOutline className="w-7 h-7 fill-white lg:group-hover:fill-primary" />
+    </a>
 }
