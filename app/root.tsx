@@ -17,6 +17,7 @@ import '@fontsource/poppins/200.css';
 import '@fontsource/poppins/300.css';
 import '@fontsource/poppins/500.css';
 import '@fontsource/poppins/700.css';
+import { Footer } from "./components/layout/footer";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
@@ -35,6 +36,7 @@ export default function App() {
       <body className="bg-secondary">
         <Header />
         <Outlet />
+        <Footer />
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
