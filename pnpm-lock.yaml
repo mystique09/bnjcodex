@@ -27,6 +27,14 @@ dependencies:
     specifier: 0.1.1
     version: 0.1.1(preact@10.19.3)
 
+devDependencies:
+  '@fontsource-variable/space-grotesk':
+    specifier: ^5.0.16
+    version: 5.0.16
+  '@fontsource/poppins':
+    specifier: ^5.0.8
+    version: 5.0.8
+
 packages:
 
   /@alloc/quick-lru@5.2.0:
@@ -806,6 +814,14 @@ packages:
     engines: {node: '>=14'}
     dev: false
 
+  /@fontsource-variable/space-grotesk@5.0.16:
+    resolution: {integrity: sha512-pFM2xRqXX5ac9d6XqMgF3o1AhJpzi89Y66MTrW36xiXdEHciGkKx1XeXMW0LEwZGTe36tkopKRfmnFg5KMSDgw==}
+    dev: true
+
+  /@fontsource/poppins@5.0.8:
+    resolution: {integrity: sha512-P8owfYWluoUY5Nyzk4gT/L6LmLmseP6ezFWhj6VBUa5pRIdnCvNJpoQ6i/vhekjtJOfqX6nKlB+LCttoUl2GQQ==}
+    dev: true
+
   /@ioredis/commands@1.2.0:
     resolution: {integrity: sha512-Sx1pU8EM64o2BrqNpEO1CNLtKQwyhuXuqyfH7oGKCk+1a33d2r5saW8zNwm3j6BTExtjrv2BxTgzzkMwts6vGg==}
     dev: false
@@ -1006,6 +1022,7 @@ packages:
     dependencies:
       is-glob: 4.0.3
       micromatch: 4.0.5
+      napi-wasm: 1.1.0
     dev: false
     bundledDependencies:
       - napi-wasm
@@ -3423,6 +3440,10 @@ packages:
     resolution: {integrity: sha512-eSRppjcPIatRIMC1U6UngP8XFcz8MQWGQdt1MTBQ7NaAmvXDfvNxbvWV3x2y6CdEUciCSsDHDQZbhYaB8QEo2g==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
+    dev: false
+
+  /napi-wasm@1.1.0:
+    resolution: {integrity: sha512-lHwIAJbmLSjF9VDRm9GoVOy9AGp3aIvkjv+Kvz9h16QR3uSVYH78PNQUnT2U4X53mhlnV2M7wrhibQ3GHicDmg==}
     dev: false
 
   /nitropack@2.8.1:

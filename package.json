@@ -17,5 +17,9 @@
   },
   "engines": {
     "node": ">=18"
+  },
+  "devDependencies": {
+    "@fontsource-variable/space-grotesk": "^5.0.16",
+    "@fontsource/poppins": "^5.0.8"
   }
 }
