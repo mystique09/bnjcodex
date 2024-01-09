@@ -1,7 +1,6 @@
-import type { Config } from 'tailwindcss'
-
-export default {
-  content: ['./app/**/*.{js,jsx,ts,tsx}'],
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
   theme: {
     extend: {
       colors: {
@@ -14,8 +13,7 @@ export default {
         "space-grotesk": "Space Grotesk Variable, sans-serif",
         "poppins": "Poppins, sans-serif"
       }
-    },
+    }
   },
-  plugins: [],
-} satisfies Config
-
+  plugins: []
+};

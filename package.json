@@ -1,44 +1,29 @@
 {
   "name": "bnjcodex",
-  "private": true,
-  "sideEffects": false,
   "type": "module",
   "scripts": {
-    "build": "remix build",
-    "dev": "remix dev --manual",
-    "start": "remix-serve ./build/index.js",
-    "typecheck": "tsc",
-    "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint .",
-    "format": "prettier --write .",
-    "format:repo": "npm run format && npm run lint -- --fix"
+    "dev": "vinxi dev",
+    "build": "vinxi build",
+    "start": "vinxi start",
+    "format": "biome format ./src --write",
+    "lint": "biome lint ./src"
   },
-  "prettier": {},
-  "eslintIgnore": [
-    "/node_modules",
-    "/server/index.js",
-    "/public/build"
-  ],
   "dependencies": {
-    "@remix-run/css-bundle": "^2.3.1",
-    "@remix-run/node": "^2.3.1",
-    "@remix-run/react": "^2.3.1",
-    "@remix-run/serve": "^2.3.1",
-    "isbot": "^3.6.8",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "devDependencies": {
-    "@remix-run/dev": "^2.3.1",
-    "@remix-run/eslint-config": "^2.3.1",
-    "@types/react": "^18.2.20",
-    "@types/react-dom": "^18.2.7",
-    "eslint": "^8.38.0",
-    "tailwindcss": "^3.4.0",
-    "typescript": "^5.1.6",
-    "@fontsource-variable/space-grotesk": "^5.0.16",
-    "@fontsource/poppins": "^5.0.8"
+    "@solidjs/meta": "^0.29.3",
+    "@solidjs/router": "^0.10.7",
+    "@solidjs/start": "^0.4.5",
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.26",
+    "solid-js": "^1.8.9",
+    "tailwindcss": "^3.3.3",
+    "vinxi": "0.1.1"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.5.0",
+    "@fontsource-variable/space-grotesk": "^5.0.16",
+    "@fontsource/poppins": "^5.0.8"
   }
 }
