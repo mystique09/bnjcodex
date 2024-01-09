@@ -4,7 +4,9 @@
   "scripts": {
     "dev": "vinxi dev",
     "build": "vinxi build",
-    "start": "vinxi start"
+    "start": "vinxi start",
+    "format": "biome format ./src --write",
+    "lint": "biome lint ./src"
   },
   "dependencies": {
     "@solidjs/meta": "^0.29.3",
@@ -20,6 +22,7 @@
     "node": ">=18"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.5.0",
     "@fontsource-variable/space-grotesk": "^5.0.16",
     "@fontsource/poppins": "^5.0.8"
   }
