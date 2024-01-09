@@ -12,7 +12,7 @@ export function Header() {
 						<A href="/projects">Projects</A>
 					</li>
 				</ul>
-				<div class="divider w-px h-4 bg-text-content hidden sm:block"></div>
+				<div class="divider w-px h-4 bg-text-content hidden sm:block" />
 				<NavbarDownloadButton resourcePath="/Garcia, Benjie Ben.pdf" />
 			</div>
 		</NavbarContainer>
