@@ -10,6 +10,7 @@ import { FileRoutes } from "@solidjs/start";
 import { Show, Suspense } from "solid-js";
 import "./app.css";
 
+import { MetaProvider } from '@solidjs/meta';
 import { Footer } from "./components/layout/footer";
 import { Header } from "./components/layout/header";
 
@@ -18,11 +19,13 @@ export default function App() {
     <Router
       root={(props) => (
         <>
-          <Header />
-          <Suspense>{props.children}</Suspense>
-          <Show when={!Object.keys(props.params).includes("404")}>
-            <Footer />
-          </Show>
+          <MetaProvider>
+            <Header />
+            <Suspense>{props.children}</Suspense>
+            <Show when={!Object.keys(props.params).includes("404")}>
+              <Footer />
+            </Show>
+          </MetaProvider>
         </>
       )}
     >
