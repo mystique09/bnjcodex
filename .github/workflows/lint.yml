@@ -18,12 +18,29 @@ jobs:
             - name: Setup NodeJS
               uses: actions/setup-node@v4
               with:
-                cache: npm
-                cache-dependency-path: ./package.json
                 node-version: 20
 
+            - uses: pnpm/action-setup@v2
+              name: Install pnpm
+              with:
+                version: 8
+                run_install: false
+            
+            - name: Get pnpm store dir
+              shell: bash
+              run: |
+                echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+            - uses: actions/cache@v3
+              name: Setup pnpm cache
+              with:
+                path: ${{ env.STORE_PATH  }}
+                key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+                restore-keys: |
+                  ${{ runner.os }}-pnpm-store-
+
             - name: Install deps
-              run: npm install
+              run: pnpm install
 
             - name: Lint
-              run: npm run lint
+              run: pnpm lint
